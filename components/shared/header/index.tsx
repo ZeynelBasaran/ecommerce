@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { APP_NAME } from "@/lib/contants";
 import ModeToggleTheme from "./modeToggleTheme";
 import logo4 from "@/public/logo3.jpg"
+import { SheetDemo } from "./sheet";
+
 
 const Header = () => {
   return (
@@ -28,9 +30,9 @@ const Header = () => {
 
         <div className="space-x-2">
           <ModeToggleTheme/>
-          <Button asChild variant="ghost">
+          <Button asChild className="" variant="ghost ">
             <Link href="/card">
-              <ShoppingCart /> Cart
+              Sepet
             </Link>
           </Button>
           <Button asChild >
@@ -38,6 +40,7 @@ const Header = () => {
               <UserIcon /> Sign In
             </Link>
           </Button>
+          <SheetDemo />
         </div>
       </div>
     </header>

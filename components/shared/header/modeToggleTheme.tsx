@@ -1,12 +1,7 @@
 "use client";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@radix-ui/react-dropdown-menu";
+
 import { useTheme } from "next-themes";
-import { MoonIcon, SunMoon, SunIcon, Sun, Moon } from "lucide-react";
+import { MoonIcon, SunIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
@@ -36,6 +31,12 @@ const ModeToggleTheme = () => {
 export default ModeToggleTheme;
 
 /*
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@radix-ui/react-dropdown-menu";
 
  <DropdownMenuTrigger asChild>
         <Button
