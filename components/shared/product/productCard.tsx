@@ -2,7 +2,12 @@ import Image from "next/image";
 import Rating from "@mui/material/Rating";
 import { Product } from "@/lib/productType";
 
-const ProductCard = ({item}:Product) => {
+const ProductCard = ({ item }: { item: Product }) => {
+
+
+  const value = item.price.toFixed(2);
+  const [intValue, floatValue] = value.split(".");
+
   return (
     <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
       <div className="h-40 w-full flex items-center justify-center">
@@ -15,6 +20,7 @@ const ProductCard = ({item}:Product) => {
               height={100}
               layout="fixed"
               unoptimized
+              //priority={true}
             />
           }
         </a>
@@ -45,7 +51,9 @@ const ProductCard = ({item}:Product) => {
         </div>
         <div className="mt-2 flex items-center justify-between gap-4">
           <p className="text-2xl font-extrabold leading-tight text-gray-900 dark:text-white">
-          <span className="">$</span>{item.price}
+            <span className="text-xs align-super">$</span>
+            {intValue}
+            <span className="text-xs align-super">.{floatValue}</span>
           </p>
 
           <button
