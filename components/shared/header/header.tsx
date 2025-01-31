@@ -12,7 +12,7 @@ const Header = () => {
     <header className="w-full border-b ">
       <div className="flex justify-between items-center">
         <div className="">
-          <Link className="cursor-pointer flex items-center py-2" href="/card">
+          <Link className="cursor-pointer flex items-center py-2" href="/">
             <Image
               src={logo4}
               alt={`${APP_NAME} logo`}

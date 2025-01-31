@@ -29,8 +29,63 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# E Ticaret Web Sitesi
+Ürünler 
+
+## Kullanılan Teknolojiler
+
+- **React**: Kullanıcı arayüzü oluşturmak için kullanılan ön yüz JavaScript kütüphanesi.
+- **CSS**: Web uygulamasının stilini oluşturmak için kullanılır.
+- **Tailwind**: Web uygulamasının stilini oluşturmak için kullanılır.
+- **Netlify**: Uygulamanın dağıtımı için kullanılan hosting platformu.
+
+
+
+
+## Başlangıç
+
+Bu projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları takip edebilirsiniz.
+
+### Gereksinimler
+
+Aşağıdaki araçların yüklü olduğundan emin olun:
+
+- **Node.js**: [İndir](https://nodejs.org/)
+- **npm**: Node.js ile birlikte gelir, yüklü olup olmadığını kontrol etmek için `npm -v` komutunu kullanabilirsiniz.
+
+### Kurulum
+
+1. Projeyi klonlayın:
+
+    ```bash
+    git clone https://github.com/ZeynelBasaran/Commerce
+    ```
+
+2. Proje dizinine gidin:
+
+    ```bash
+    cd Commerce
+    ```
+
+3. Gerekli bağımlılıkları yükleyin:
+
+    ```bash
+    npm install
+    ```
+
+4. Geliştirme sunucusunu başlatın:
+
+    ```bash
+    npm run dev
+    ```
+
+Uygulama, `http://localhost:3000` adresinde çalışmaya başlayacaktır.
+
+## Dağıtım
+
+Bu proje Netlify üzerinde dağıtılmıştır. Canlı sürümü [buradan]() görüntüleyebilirsiniz.
+
+
+

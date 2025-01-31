@@ -1,4 +1,25 @@
-export interface Product{
+interface Dimensions {
+  width: number;
+  height: number;
+  depth: number;
+}
+
+export interface Review {
+  rating: number;
+  comment: string;
+  date: string;
+  reviewerName: string;
+  reviewerEmail: string;
+}
+
+interface Meta {
+  createdAt: string;
+  updatedAt: string;
+  barcode: string;
+  qrCode: string;
+}
+
+export interface Product {
   id: number;
   title: string;
   description: string;
@@ -11,34 +32,18 @@ export interface Product{
   brand: string;
   sku: string;
   weight: number;
-  dimensions: {
-    width: number;
-    height: number;
-    depth: number;
-  };
+  dimensions: Dimensions;
   warrantyInformation: string;
   shippingInformation: string;
   availabilityStatus: string;
-  reviews: {
-    rating: number;
-    comment: string;
-    date: string;
-    reviewerName: string;
-    reviewerEmail: string;
-  }[];
+  reviews: Review[];
   returnPolicy: string;
   minimumOrderQuantity: number;
-  meta: {
-    createdAt: string;
-    updatedAt: string;
-    barcode: string;
-    qrCode: string;
-  };
-  images: string[];
+  meta: Meta;
   thumbnail: string;
-};
-
+  images: string[];
+}
 
 export interface ApiResponse {
-    products: Product[];
+  products: Product[];
 }
