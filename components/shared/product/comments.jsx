@@ -7,8 +7,6 @@ const Comments = ({ items }) => {
   
   const { reviewerName, date, comment } = items;
 
-
-
   return (
     <>
       <hr className='' />

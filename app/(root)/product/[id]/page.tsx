@@ -1,35 +1,27 @@
 import { getProduct } from "@/service/service";
 import { notFound } from "next/navigation";
-import Comments from "@/components/shared/product/Comments";
+import Comments from "@/components/shared/product/comments";
 import { Review } from "@/lib/productType";
-
-import "react-slideshow-image/dist/styles.css";
+import Productİmages from "@/components/shared/product/productİmages";
 
 const ProductDetails = async (props: { params: Promise<{ id: string }> }) => {
   const { id } = await props.params;
 
   const product = await getProduct(id);
 
+  const { title, price, rating, reviews, description, images } = product;
+
   if (!product) notFound();
 
-  const { title, price, rating, reviews, description, images } = product;
+  console.log(images);
 
   return (
     <section className="py-8 bg-white md:py-16 dark:bg-gray-900 antialiased ">
       <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
-         
-            {images?.map((item, i) => (
-              <div
-                key={`${item.title}a`}
-                className="shrink-0 max-w-md lg:max-w-lg mx-auto"
-              >
-                <img className="w-full dark:hidden" src={item} alt="" />
-                <img className="w-full hidden dark:block" src={item} alt="" />
-              </div>
-            ))}
-         
-
+          <div className="shrink-0 max-w-md lg:max-w-lg mx-auto mb-4">
+            <Productİmages image={images} />
+          </div>
           <div className="mt-6 sm:mt-8 lg:mt-0">
             <h1 className="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">
               {title}
@@ -85,7 +77,7 @@ const ProductDetails = async (props: { params: Promise<{ id: string }> }) => {
             <div className="mt-2 flex items-center gap-2 sm:mt-0">
               <div className="flex items-center gap-0.5"></div>
               <p className="text-sm font-medium leading-none text-gray-500 dark:text-gray-400">
-                ({rating})
+                ({rating?.toFixed(1)})
               </p>
               <a
                 href="#"
@@ -97,7 +89,7 @@ const ProductDetails = async (props: { params: Promise<{ id: string }> }) => {
           </div>
 
           <div>
-            {reviews.map((items: Review, i: number) => {
+            {reviews?.map((items: Review, i: number) => {
               return <Comments key={`${i}${items.comment}`} items={items} />;
             })}
           </div>
@@ -108,3 +100,13 @@ const ProductDetails = async (props: { params: Promise<{ id: string }> }) => {
 };
 
 export default ProductDetails;
+
+/*
+ <div
+             
+              className="shrink-0 max-w-md lg:max-w-lg mx-auto"
+            >
+              <img className="w-full dark:hidden" src={item} alt="" />
+              <img className="w-full hidden dark:block" src={item} alt="" />
+            </div>
+*/

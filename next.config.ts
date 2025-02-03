@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true, // Build sırasında ESLint hatalarını görmezden gel
   },
+  images: {
+    domains: ['cdn.dummyjson.com'],
+  },
 };
 
 export default nextConfig;
